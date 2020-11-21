@@ -38,7 +38,7 @@ label{
 #newPassword{
     color: #2CC530;
     font-weight: bolder;
-   
+    word-break: break-all;
 }
 #pass{
     padding: 6px;
