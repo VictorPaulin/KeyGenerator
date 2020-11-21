@@ -1,0 +1,72 @@
+h1{
+    font-family: 'Ubuntu', sans-serif;
+    color: #E5EBEA;
+
+    text-align: center;
+    
+    margin-bottom: 60px;
+    margin-top: 50px;
+
+    position: relative;
+}
+body{
+    background-color: #282A36 ;
+    
+}
+#btnGerar{
+    border-radius: 6px;
+    background-color: dodgerblue;
+    border: none;
+    padding: 7px;
+    background-color: #2191FB;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    transition: 2000ms;
+}
+
+#btnGerar:hover{
+    background-color:#1f78cc ;
+    transition: 2000ms;
+    color: #E5EBEA;
+    font-weight: bolder;
+}
+label{
+    color: #E5EBEA;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+}
+#newPassword{
+    color: #2CC530;
+    font-weight: bolder;
+   
+}
+#pass{
+    padding: 6px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+}
+
+.form{
+    position: relative;
+    left: 27%;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 50%; 
+}
+
+.formIn{
+    margin-bottom: 10px;
+}
+
+.result{
+    margin-top: 30px;
+    
+    background-color: #E5EBEA;
+    border-radius: 4px;
+
+    padding: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+}
+

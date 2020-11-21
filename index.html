@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <title>KeyGenerator</title> 
+</head>
+
+<body>
+    <main>
+            <h1 class="title">Gerador de senha</h1>
+            <div class="form">
+                <label class="formIn" for="">Qual o tamanho da senha? Entre 5 e 34</label>
+                <input class="formIn" type="number" id="pass">
+                <button class="formIn" id="btnGerar" onclick="generatePass()">Gerar senha</button>
+                
+                <div class="result">
+                    <span>A sua nova senha é:  </span>
+                    <span class="formIn" id="newPassword"></span>
+                </div>
+                
+            </div>
+            
+            
+    </main>
+</body>
+
+<script>
+    //Seletores
+const pass = document.querySelector('#pass');
+const newPass = document.querySelector("#newPassword");
+
+//Function chamada pelo btnGerar
+function generatePass(){
+    //Zera o valor da senha a cada click
+    newPassword.innerHTML = '';
+    
+
+    //Verifica se o campo TAMANHO foi preenchido
+    if(pass.value == '')
+        {
+            alert("Digite o tamanho da sua senha");
+            pass.value = '5'
+            return;
+        }
+      
+    //Verifica se a senha não ultrapassa o limite de caracteres
+    if(pass.value > 34)
+        {
+            alert('A senha ultrapassou o limite de 34 caracteres');
+            pass.value = '5';
+            return;
+        }
+
+    //Verifica se o valor inserido é maior que quatro
+     if(pass.value <= 4)
+        {
+            alert('A senha deve possuir no mínimo 5 caracteres')
+            pass.value = '1'
+            return;
+        }
+
+    //Rotina caso os dados de entrada sejam validos
+    //Variaveis
+    //Charset é o array de caracteres que podem ser usados para gerar uma senha
+    //Password vai receber a nova senha
+    else{
+        
+            let charset ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*_+";
+            let password = "";
+    
+            //O for preenche o array da nova senha com indices aleatorios do array 'charset'
+            for(var i = 0, n = charset.length; i< pass.value; i++)
+                {
+                    password += charset.charAt(Math.floor( Math.random()* n));
+                }
+        
+            //Exibe os resultados
+            let result = document.createTextNode(password);
+            return newPassword.appendChild(result)
+    } 
+
+}//Fim da function generatePass
+</script> 
+</html>
